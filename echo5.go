@@ -7,14 +7,16 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
-const repeats = 100000000
-const test = 1 // 1 or 2 or 3
+const repeats = 10000000
+const test = 3 // 1 or 2 or 3
 
 var sum_string, separator string
 
 func main() {
+	t0 := time.Now()
 	if test == 1 {
 		for k := 0; k < repeats; k++ {
 			sum_string = ""
@@ -37,4 +39,6 @@ func main() {
 		}
 	}
 	fmt.Println(sum_string)
+	t1 := time.Now()
+	fmt.Printf("The function took %v to run in test #%v.\n", t1.Sub(t0), test)
 }
