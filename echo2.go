@@ -12,5 +12,4 @@ func main() {
 		separator = " "
 	}
 	fmt.Println(sum_string)
-    fmt.Println(range os.Args[1:])
 }
