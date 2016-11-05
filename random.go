@@ -1,12 +1,19 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
+	"time"
 )
 
+var MAX int = 10
+
+var rand_arr [10]int
+
 func main() {
-	for i := 1; i <= 100; i++ {
-		rand.Seed(int64(i))
-		println("Rand: ", rand.Intn((100)))
+	rand.Seed(time.Now().UTC().UnixNano())
+	for i, _ := range rand_arr {
+		rand_arr[i] = rand.Intn(MAX)
 	}
+	fmt.Println(rand_arr)
 }

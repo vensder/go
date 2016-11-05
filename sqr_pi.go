@@ -9,5 +9,5 @@ func main() {
 	sqr := func(x float64) float64 {
 		return math.Sqrt(x)
 	}
-	print(sqr(pi))
+	println(sqr(pi))
 }
