@@ -6,14 +6,18 @@ import (
 	"time"
 )
 
-var MAX int = 10
+var MAX int = 100
 
-var rand_arr [10]int
+var rand_arr [10][10]int
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	for i, _ := range rand_arr {
-		rand_arr[i] = rand.Intn(MAX)
+		for j, _ := range rand_arr[i] {
+			rand_arr[i][j] = rand.Intn(MAX)
+		}
 	}
-	fmt.Println(rand_arr)
+	for i := range rand_arr {
+		fmt.Println(rand_arr[i])
+	}
 }
