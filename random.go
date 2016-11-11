@@ -12,8 +12,8 @@ var rand_arr [10][10]int
 
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
-	for i, _ := range rand_arr {
-		for j, _ := range rand_arr[i] {
+	for i := range rand_arr {
+		for j := range rand_arr[i] {
 			rand_arr[i][j] = rand.Intn(MAX)
 		}
 	}
