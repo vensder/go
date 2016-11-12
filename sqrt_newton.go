@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 var (
 	max_repeats int     = 555
-	x           float64 = 555
-	prec        float64 = 0.00000000000000001
+	x           float64 = 99999999999999999999999
+	prec        float64 = 0.000000000000000000001
 )
 
 func mod(x float64) float64 {
@@ -24,7 +25,7 @@ func Sqrt(x float64) float64 {
 		z1 := 0.5 * (z + x/z)
 		delta := mod(z1 - z)
 		if delta > prec {
-			fmt.Printf("Iteration: %v. Delta: %v\n", i, z1-z)
+			//fmt.Printf("Iteration: %v. Delta: %v\n", i, z1-z)
 			z = z1
 		} else {
 			break
@@ -34,6 +35,13 @@ func Sqrt(x float64) float64 {
 }
 
 func main() {
-	fmt.Println(Sqrt(x))
-	fmt.Println(math.Sqrt(x))
+	t0 := time.Now().UnixNano()
+	y := Sqrt(x)
+	t1 := time.Now().UnixNano()
+	fmt.Println(y, t1-t0)
+
+	t0 = time.Now().UnixNano()
+	y = math.Sqrt(x)
+	t1 = time.Now().UnixNano()
+	fmt.Println(y, t1-t0)
 }
