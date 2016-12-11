@@ -15,4 +15,7 @@ func main() {
 	fmt.Printf("%v\n", divid(3, 2))
 
 	fmt.Printf("%b %b %b \n", 0 << 2, 1 << 2, 2 << 2)
+	s := "-"
+	s = s + s 
+	println(s)
 }
