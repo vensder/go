@@ -17,4 +17,5 @@ func main() {
 	fmt.Printf("const i type is %T: %v\n", i, i)
 	fmt.Printf("const j type is %T: %v\n", j, j)
 	fmt.Printf("const f type is %T: %v\n", f, f)
+	World = "World"
 }
