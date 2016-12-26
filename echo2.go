@@ -11,5 +11,7 @@ func main() {
 		sum_string += separator + arg
 		separator = " "
 	}
-	fmt.Println(sum_string)
+    println("Executable path:", os.Args[0])
+    println("Quantity of the arguments:", len(os.Args[1:]))
+	fmt.Println("Arguments:",sum_string)
 }

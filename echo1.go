@@ -7,7 +7,7 @@ import (
 
 func main() {
 	var count int
-	var sum_string, separator string
+	var sum_string, separator string = "", ""
 	for i := 1; i < len(os.Args); i++ {
 		sum_string += separator + os.Args[i]
 		separator = " "
