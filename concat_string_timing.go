@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-const repeats = 10000000
+const repeats = 100000
 
 var sum_string, separator string
 var t0, t1 time.Time
@@ -24,7 +24,6 @@ func main() {
 		if test == 1 {
 			t0 = time.Now()
 			for k = 0; k < repeats; k++ {
-				sum_string = ""
 				for i = 1; i < len(os.Args); i++ {
 					sum_string += separator + os.Args[i]
 					separator = " "
@@ -32,12 +31,10 @@ func main() {
 			}
 			t1 = time.Now()
 			fmt.Printf("The function took %v to run in test #%v.\n", t1.Sub(t0), test)
-			fmt.Println(sum_string)
 
 		} else if test == 2 {
 			t0 = time.Now()
 			for k = 0; k < repeats; k++ {
-				sum_string = ""
 				for _, arg := range os.Args[1:] {
 					sum_string += separator + arg
 					separator = " "
@@ -45,7 +42,6 @@ func main() {
 			}
 			t1 = time.Now()
 			fmt.Printf("The function took %v to run in test #%v.\n", t1.Sub(t0), test)
-			fmt.Println(sum_string)
 
 		} else if test == 3 {
 			t0 = time.Now()
@@ -54,13 +50,11 @@ func main() {
 			}
 			t1 = time.Now()
 			fmt.Printf("The function took %v to run in test #%v.\n", t1.Sub(t0), test)
-			fmt.Println(sum_string)
 
 		} else if test == 4 {
 			t0 = time.Now()
 			for k = 0; k < repeats; k++ {
-				separator := ""
-				buffer.Reset()
+				//buffer.Reset()
 				for _, arg := range os.Args[1:] {
 					buffer.WriteString(separator + arg)
 					separator = " "
@@ -68,7 +62,6 @@ func main() {
 			}
 			t1 = time.Now()
 			fmt.Printf("The function took %v to run in test #%v.\n", t1.Sub(t0), test)
-			fmt.Println(buffer.String())
 		}
 
 	}
