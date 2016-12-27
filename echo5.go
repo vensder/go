@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-const repeats = 10000000
+const repeats = 100000000
 
 var sum_string, separator string
 var t0, t1 time.Time
@@ -26,8 +26,8 @@ func main() {
 			for k = 0; k < repeats; k++ {
 				sum_string = ""
 				for i = 1; i < len(os.Args); i++ {
-					sum_string += separator + os.Args[i]
-					separator = " "
+					sum_string += os.Args[i] + " "
+					//separator = " "
 				}
 			}
 			t1 = time.Now()
@@ -39,8 +39,8 @@ func main() {
 			for k = 0; k < repeats; k++ {
 				sum_string = ""
 				for _, arg := range os.Args[1:] {
-					sum_string += separator + arg
-					separator = " "
+					sum_string += arg + " "
+					//separator = " "
 				}
 			}
 			t1 = time.Now()
@@ -59,11 +59,10 @@ func main() {
 		} else if test == 4 {
 			t0 = time.Now()
 			for k = 0; k < repeats; k++ {
-				separator := ""
 				buffer.Reset()
 				for _, arg := range os.Args[1:] {
-					buffer.WriteString(separator + arg)
-					separator = " "
+					buffer.WriteString(arg)
+					buffer.WriteString(" ")
 				}
 			}
 			t1 = time.Now()

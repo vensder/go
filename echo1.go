@@ -6,14 +6,12 @@ import (
 )
 
 func main() {
-	var count int
-	var sum_string, separator string = "", ""
+	var sum_string string = ""
 	for i := 1; i < len(os.Args); i++ {
-		sum_string += separator + os.Args[i]
-		separator = " "
-		count = i
+		sum_string += os.Args[i] + " "
+		//sum_string += " "
 	}
 	println("Executable path:", os.Args[0])
-	println("Quantity of the arguments:", count)
+	println("Quantity of the arguments:", len(os.Args[1:]))
 	fmt.Println(sum_string)
 }

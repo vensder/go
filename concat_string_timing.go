@@ -25,8 +25,8 @@ func main() {
 			t0 = time.Now()
 			for k = 0; k < repeats; k++ {
 				for i = 1; i < len(os.Args); i++ {
-					sum_string += separator + os.Args[i]
-					separator = " "
+					sum_string += os.Args[i] + " "
+					//separator = " "
 				}
 			}
 			t1 = time.Now()
@@ -36,8 +36,8 @@ func main() {
 			t0 = time.Now()
 			for k = 0; k < repeats; k++ {
 				for _, arg := range os.Args[1:] {
-					sum_string += separator + arg
-					separator = " "
+					sum_string += arg + " "
+					//separator = " "
 				}
 			}
 			t1 = time.Now()
@@ -56,8 +56,9 @@ func main() {
 			for k = 0; k < repeats; k++ {
 				//buffer.Reset()
 				for _, arg := range os.Args[1:] {
-					buffer.WriteString(separator + arg)
-					separator = " "
+					buffer.WriteString(arg)
+					buffer.WriteString(" ")
+					//separator = " "
 				}
 			}
 			t1 = time.Now()
