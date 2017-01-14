@@ -1,5 +1,5 @@
 *
 !.gitignore
 !*.go
-!stack/*.go
+!stack
 
