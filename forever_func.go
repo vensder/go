@@ -11,7 +11,7 @@ func line(n int) {
 	fmt.Println(strings.Repeat(symbol, n))
 }
 
-func cos_int(n int) int {
+func sin_int(n int) int {
     math.Cos(float64(n))
 }
 
