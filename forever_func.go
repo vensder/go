@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strings"
-    "math"
 )
+
+var max_l int = 80
 
 func line(n int) {
 	symbol := "-"
@@ -12,16 +14,16 @@ func line(n int) {
 }
 
 func sin_int(n int) int {
-    math.Cos(float64(n))
+	return int(math.Sin(float64(n/max_l) * (math.Pi / 2.0)) * float64(max_l))
 }
 
 func main() {
 	for {
-		for i := 0; i < 60; i++ {
-			line(i)
+		for i := 0; i < max_l; i++ {
+			line(sin_int(i))
 		}
-        for i := 60; i > 0; i--{
-            line(i)
-        }
+		for i := max_l; i > 0; i-- {
+			line(sin_int(i))
+		}
 	}
 }
