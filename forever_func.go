@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-var max_l int = 160
+var max_l int = 60
 
 func line(n int) {
 	symbol := "#"

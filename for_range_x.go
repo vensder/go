@@ -7,14 +7,14 @@ import (
 func main() {
 	x := "hello"
 	y := "12345"
-    i := 0
+	i := 0
 
-    for range x {
+	for range x {
 		fmt.Printf("%v\n", x)
 	}
 
-    for range y {
+	for range y {
 		fmt.Printf("%c\n", y[i])
-        i++
+		i++
 	}
 }
