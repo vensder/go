@@ -45,6 +45,10 @@ func main() {
 	c1 := circle{5}
 	t1 := triangle{10, 10, 10}
 
+	fmt.Println(s1.area())
+	fmt.Println(c1.area())
+	fmt.Println(t1.area())
+
 	printArea(s1)
 	printArea(c1)
 	printArea(t1)
