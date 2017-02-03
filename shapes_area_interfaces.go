@@ -5,6 +5,11 @@ import (
 	"math"
 )
 
+type shape interface {
+	area() float64
+	perim() float64
+}
+
 type square struct {
 	side float64
 }
@@ -19,25 +24,33 @@ type triangle struct {
 	c float64
 }
 
+func (s square) perim() float64 {
+	return s.side * 4
+}
+
 func (s square) area() float64 {
 	return s.side * s.side
+}
+
+func (c circle) perim() float64 {
+	return 2 * math.Pi * c.radius
 }
 
 func (c circle) area() float64 {
 	return math.Pi * c.radius * c.radius
 }
 
+func (t triangle) perim() float64 {
+	return t.a + t.b + t.c
+}
+
 func (t triangle) area() float64 {
-	p := (t.a + t.b + t.c) / 2
+	p := t.perim() / 2
 	return math.Sqrt(p * (p - t.a) * (p - t.b) * (p - t.c))
 }
 
-type shape interface {
-	area() float64
-}
-
 func printArea(sh shape) {
-	fmt.Printf("Area of %T is %.2f\n", sh, sh.area())
+	fmt.Printf("Area of %T is %.2f, perimeter is %.2f\n", sh, sh.area(), sh.perim())
 }
 
 func main() {
