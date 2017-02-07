@@ -7,10 +7,12 @@ import (
 )
 
 func countLines(f *os.File, counts map[string]int) {
+	fmt.Printf("file: %v\n", f.Name())
 	input := bufio.NewScanner(f)
 	for input.Scan() {
 		counts[input.Text()]++
 	}
+    fmt.Printf("counts: %v\n", counts)
 }
 
 func main() {
@@ -22,6 +24,7 @@ func main() {
         Also you can pass files names as args
         for input text from files(needed restart prog with args)`)
 	counts_map := make(map[string]int)
+//	files_map := make(map[string]int)
 	files := os.Args[1:]
 	if len(files) == 0 {
 		countLines(os.Stdin, counts_map)
