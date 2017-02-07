@@ -13,5 +13,5 @@ func main() {
 		fmt.Printf("%v: %v\n", index+1, arg)
 	}
 	fmt.Printf("Total args: %v\n", len(os.Args[1:]))
-	fmt.Printf("Args: %v\n", string(os.Args[1:]))
+	//fmt.Printf("Args: %v\n", string(os.Args[1:]))
 }
