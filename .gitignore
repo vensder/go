@@ -3,4 +3,5 @@
 !*.go
 !stack
 !stacker
+!echotest
 
